@@ -8,4 +8,12 @@
 
     $ rails generate scaffold Card question:text answer:text
 
+### fixture
+Question:
+
+    a = [1, 3, nil, 5] # Get an array with nil removed
+
+Answer:
+
+    a.compact
 
