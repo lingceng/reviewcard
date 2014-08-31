@@ -1,0 +1,11 @@
+### user story
++ People can create card
++ People can see card list
++ People can see card detail
++ People can edit and delete a card
+
+## use scaffold to generate CRUD
+
+    $ rails generate scaffold Card question:text answer:text
+
+
