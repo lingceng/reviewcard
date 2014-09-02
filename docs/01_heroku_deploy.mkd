@@ -27,14 +27,15 @@ edit `database.yml` config
     adapter: postgresql
     database: reviewcard_production
 
-set ruby verison
+### set ruby verison
 
     ruby '2.1.0'
 
-use Unicoin server
+### use Unicoin server
 
 https://devcenter.heroku.com/articles/rails-unicorn
 
 to run with unicorn
 
     $ unicorn_rails
+
