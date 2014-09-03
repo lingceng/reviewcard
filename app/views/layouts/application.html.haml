@@ -20,26 +20,23 @@
 
   %body
     .navbar.navbar-default.navbar-static-top
-      .container
+      .container-fluid
         %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.navbar-brand(href="/") Reviewcard
-        .navbar-collapse.collapse.navbar-responsive-collapse
-          %ul.nav.navbar-nav
-            %li= link_to "Cars", cards_path
 
-    .container
+        .row
+          .col-md-8.col-md-offset-2
+            %a.navbar-brand(href="/") Reviewcard
+            .navbar-collapse.collapse.navbar-responsive-collapse
+              %ul.nav.navbar-nav
+                %li= link_to "Cars", cards_path
+
+    .container-fluid
       .row
-        .col-lg-9
+        .col-md-8.col-md-offset-2
           = bootstrap_flash
           = yield
-        .col-lg-3
-          .well.sidebar-nav
-            %h3 Sidebar
-            %ul.nav.nav-list
-              %li.nav-header Sidebar
-              %li= link_to "Cars", cards_path
-      %footer
-        %p &copy; Company 2014
+
+    %footer.rc-footer

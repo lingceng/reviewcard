@@ -1,0 +1,22 @@
+Optimize Layout
+===
+
+### Known Ploblems
+
++ Title has too much top margin
+    Remove .page-header
++ Footer should have more top margin
+    Removed
++ Sidebar is not meaningful
+    Removed
++ Car form should wrap in a container
+    `.well` which make a dark ground may help (For inset effect)
+    `.jumbotron` which make a dark ground may help (For show key info)
+    `.panel` apply some basic border (Yes!)
+
+### Design Philosophy
+
++ No useless element
++ Align
++ Use whitespace to layout
+

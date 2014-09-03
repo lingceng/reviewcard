@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.rc-footer {
+  color: #777;
+  padding-top: 19px;
+}

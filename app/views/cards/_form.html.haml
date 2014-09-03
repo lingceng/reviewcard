@@ -1,13 +1,13 @@
-= form_for @card, html: { class: "form form-horizontal card" } do |f|
+= form_for @card, html: { class: "form card" } do |f|
   .form-group
     = f.label :question, class: 'control-label'
     .controls
-      = f.text_field :question, class: 'form-control', required: true
+      = f.text_area :question, class: 'form-control', required: true, row: '3'
     = error_span(@card[:question])
   .form-group
     = f.label :answer, class: 'control-label'
     .controls
-      = f.text_field :answer, class: 'form-control', required: true
+      = f.text_area :answer, class: 'form-control', required: true, row: '3'
     = error_span(@card[:answer])
   = f.submit nil,class: 'btn btn-primary'
   = link_to t('.cancel', :default => t("helpers.links.cancel")), cards_path, :class => 'btn btn-default'
