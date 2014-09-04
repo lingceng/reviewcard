@@ -1,0 +1,12 @@
+Optimize Index Layout
+===
+
+Use Card Design
+
+For PC
+
+    .col-md-4 .col-md-4 .col-md-4
+
+For Mobile
+
+    .col-xs-12
