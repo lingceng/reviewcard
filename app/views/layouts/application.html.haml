@@ -10,7 +10,8 @@
     /[if lt IE 9]
       = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
     = stylesheet_link_tag "application", :media => "all"
-    = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
+    = favicon_link_tag 'apple-touch-icon-precomposed.png',
+      :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
     = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
     = javascript_include_tag "application"
 
@@ -24,7 +25,7 @@
             %ul.nav.navbar-nav.pull-right
               - if user_signed_in?
                 %li= link_to current_user.email, edit_user_registration_path
-                %li= link_to 'Logout', destroy_user_session_path, method: :delete
+                %li= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'rc-logout'
               - else
                 %li= link_to 'Login', new_user_session_path
 

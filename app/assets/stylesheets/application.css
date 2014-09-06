@@ -21,6 +21,14 @@
 }
 
 .rc-card-answer {
-  border-top: 1px solid #eee;
+  color: black;
+  background-color: white;
 }
 
+.rc-logout {
+  background-color: lightgrey;
+}
+
+.rc-card-action {
+  color: lightgrey;
+}

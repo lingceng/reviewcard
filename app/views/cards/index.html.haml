@@ -1,8 +1,9 @@
 - model_class = Card
 
 - if user_signed_in?
-  = link_to t('.new', :default => t("helpers.links.new")), new_card_path, :class => 'btn btn-primary'
-  %br/
+  .clearfix
+    = link_to t('.new', :default => t("helpers.links.new")),
+      new_card_path, :class => 'btn btn-primary pull-right'
   %br/
 
 - @cards.each_slice(4) do |arr_of_4|
@@ -10,17 +11,20 @@
     - arr_of_4.each do |card|
       .col-md-3.col-sm-6.col-xs-12
         .panel.panel-default.rc-card
+          .panel-heading
+            = raw card.question
           .panel-body
-            = card.question
-            .rc-card-answer= card.answer
+            %code.rc-card-answer
+              = raw card.answer
           - if user_signed_in?
             .panel-footer
-              = link_to t('.edit', :default => t("helpers.links.edit")), edit_card_path(card), :class => 'btn btn-default btn-xs'
-              = link_to t('.destroy', :default => t("helpers.links.destroy")), card_path(card), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+              .clearfix
+                .pull-right
+                  = link_to t('.edit', :default => t("helpers.links.edit")),
+                    edit_card_path(card), :class => 'rc-card-action'
+                  = link_to t('.destroy', :default => t("helpers.links.destroy")),
+                    card_path(card), :method => :delete,
+                    :data => { :confirm => t('.confirm',
+                    :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                    :class => 'rc-card-actiont'
 
-
-
--#
-  = link_to t('.edit', :default => t("helpers.links.edit")), edit_card_path(card), :class => 'btn btn-default btn-xs'
-  = link_to t('.destroy', :default => t("helpers.links.destroy")), card_path(card), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
-  = link_to t('.new', :default => t("helpers.links.new")), new_card_path, :class => 'btn btn-primary'
