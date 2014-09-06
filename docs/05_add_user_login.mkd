@@ -1,0 +1,30 @@
+Add User Login
+===
+
+### User Story
+
++ User can login
++ User can register
++ User own cards
+
+### User Devise Gem
+https://github.com/plataformatec/devise
+
+Just do as the README
+
+Add gem
+
+    gem 'devise'
+
+Config initializers/devise.rb after install
+
+    $ rails generate devise:install
+
+Generate User model and migration
+
+    $ rails generate devise User
+
+Generate views
+
+    $ rails generate devise:views
+

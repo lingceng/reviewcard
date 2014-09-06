@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :cards
-  root 'cards#index'
+  devise_for :users
+  resources :cards do
+    get 'public', on: :collection
+  end
+  root 'cards#public'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

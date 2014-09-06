@@ -32,6 +32,11 @@ Rails.application.configure do
   # Generate digests for assets URLs.
   config.assets.digest = true
 
+  # Add for Devise
+  # forcing your application to not access the DB
+  #      or load models when precompiling your assets
+  config.assets.initialize_on_precompile = false
+
   # `config.assets.precompile` has moved to config/initializers/assets.rb
 
   # Specifies the header that your server uses for sending files.

@@ -1,8 +1,9 @@
 - model_class = Card
 
-= link_to t('.new', :default => t("helpers.links.new")), new_card_path, :class => 'btn btn-primary'
-%br/
-%br/
+- if user_signed_in?
+  = link_to t('.new', :default => t("helpers.links.new")), new_card_path, :class => 'btn btn-primary'
+  %br/
+  %br/
 
 - @cards.each_slice(4) do |arr_of_4|
   .row
@@ -12,9 +13,10 @@
           .panel-body
             = card.question
             .rc-card-answer= card.answer
-          .panel-footer
-            = link_to t('.edit', :default => t("helpers.links.edit")), edit_card_path(card), :class => 'btn btn-default btn-xs'
-            = link_to t('.destroy', :default => t("helpers.links.destroy")), card_path(card), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+          - if user_signed_in?
+            .panel-footer
+              = link_to t('.edit', :default => t("helpers.links.edit")), edit_card_path(card), :class => 'btn btn-default btn-xs'
+              = link_to t('.destroy', :default => t("helpers.links.destroy")), card_path(card), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
 
 
 

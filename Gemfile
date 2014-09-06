@@ -47,6 +47,9 @@ gem "twitter-bootstrap-rails"
 # HTML template language
 gem 'haml', '~> 4.0.5'
 
+# User Authentication
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

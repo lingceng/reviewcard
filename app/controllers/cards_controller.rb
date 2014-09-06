@@ -1,5 +1,14 @@
 class CardsController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_card, only: [:show, :edit, :update, :destroy]
+
+  # GET /cards
+  # GET /cards.json
+  def public
+    @cards = Card.all
+    render 'index'
+  end
+
 
   # GET /cards
   # GET /cards.json
