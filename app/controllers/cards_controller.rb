@@ -6,6 +6,7 @@ class CardsController < ApplicationController
   # GET /cards.json
   def public
     @cards = Card.all
+    @page_title = 'Public'
     render 'index'
   end
 
@@ -13,21 +14,27 @@ class CardsController < ApplicationController
   # GET /cards
   # GET /cards.json
   def index
+    @page_title = 'My Cards'
     @cards = current_user.cards
   end
 
   # GET /cards/1
   # GET /cards/1.json
   def show
+    @page_title=t '.title', :default => Card.model_name.human.titleize
   end
 
   # GET /cards/new
   def new
+    @page_title=t '.title', :default => [:'helpers.titles.new', 'New %{model}'],
+      :model => Card.model_name.human.titleize
     @card = Card.new
   end
 
   # GET /cards/1/edit
   def edit
+    @page_title = t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'],
+      :model => Card.model_name.human.titleize
   end
 
   # POST /cards

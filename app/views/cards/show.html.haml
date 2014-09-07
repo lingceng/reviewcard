@@ -1,5 +1,5 @@
 - model_class = Card
-%h4=t '.title', :default => model_class.model_name.human.titleize
+%h4=@page_title
 
 %p
   %strong= model_class.human_attribute_name(:question) + ':'

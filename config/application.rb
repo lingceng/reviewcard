@@ -23,5 +23,8 @@ module Reviewcard
       g.template_engine :haml
     end
 
+
   end
 end
+
+SITE_NAME = "ReviewCard"
