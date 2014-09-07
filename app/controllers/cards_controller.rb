@@ -13,7 +13,7 @@ class CardsController < ApplicationController
   # GET /cards
   # GET /cards.json
   def index
-    @cards = Card.all
+    @cards = current_user.cards
   end
 
   # GET /cards/1
@@ -34,6 +34,9 @@ class CardsController < ApplicationController
   # POST /cards.json
   def create
     @card = Card.new(card_params)
+
+    # set auther
+    @card.user = current_user
 
     respond_to do |format|
       if @card.save

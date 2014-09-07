@@ -1,0 +1,21 @@
+Add Private Cards
+===
+
+### User own private card
+Generate migration in Card
+
+    $ rails g migration AddColumnStatusToCards
+
+### Use rails enum (not add now)
+
+    enum status: [:public, :private]
+
+### Edit view (not add now)
+
+`Cards#public` only show `:public` status cards
+`Cards#public` show auther
+Card form add status choice
+
+### Edit view
+`Cards#public` show action only when user is the author.
+`Cards#index` only show user's own reviewcards.

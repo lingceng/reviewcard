@@ -16,7 +16,7 @@
           .panel-body
             %code.rc-card-answer
               = raw card.answer
-          - if user_signed_in?
+          - if user_signed_in? && card.user == current_user
             .panel-footer
               .clearfix
                 .pull-right
