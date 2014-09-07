@@ -1,7 +1,7 @@
 Optimize Index Layout
 ===
 
-Use Card Design
+### Use Card Design
 
 For PC
 
@@ -10,3 +10,12 @@ For PC
 For Mobile
 
     .col-xs-12
+
+### User markdown to render answer
+
+    gem 'redcarpet'
+
+User markdown in Haml
+
+    :markdown
+       the markdown text

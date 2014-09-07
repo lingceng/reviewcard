@@ -50,6 +50,9 @@ gem 'haml', '~> 4.0.5'
 # User Authentication
 gem 'devise'
 
+# render markdown
+gem 'redcarpet'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

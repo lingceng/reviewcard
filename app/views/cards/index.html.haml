@@ -14,8 +14,8 @@
           .panel-heading
             = raw card.question
           .panel-body
-            %code.rc-card-answer
-              = raw card.answer
+            :markdown
+              #{card.answer}
           - if user_signed_in? && card.user == current_user
             .panel-footer
               .clearfix
@@ -26,5 +26,5 @@
                     card_path(card), :method => :delete,
                     :data => { :confirm => t('.confirm',
                     :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                    :class => 'rc-card-actiont'
+                    :class => 'rc-card-action'
 

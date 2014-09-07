@@ -21,14 +21,14 @@
 }
 
 .rc-card-answer {
-  color: black;
-  background-color: white;
 }
 
 .rc-logout {
   background-color: lightgrey;
 }
 
-.rc-card-action {
+.rc-card-action, a:visited.rc-card-action {
   color: lightgrey;
 }
+
+
