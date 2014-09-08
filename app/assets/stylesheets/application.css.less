@@ -16,23 +16,40 @@
 
 @import "twitter/bootstrap/bootstrap";
 
+@dead-color: lightgrey;
+
 .rc-card {
 }
 
 .rc-card-question {
-  .resizable(vertical)
+  .resizable(vertical);
 }
 
 .rc-card-answer {
-  .resizable(vertical)
+  .resizable(vertical);
 }
 
-.rc-logout {
-  background-color: lightgrey;
+
+.rc-card-action() {
+  color: @dead-color;
+  &:visited {
+    color: @dead-color;
+  }
 }
 
-.rc-card-action, a:visited.rc-card-action {
-  color: lightgrey;
+.rc-card-edit {
+  .rc-card-action();
 }
+
+.rc-card-delete {
+  .rc-card-action();
+  margin-right: 10px;
+}
+
+.rc-card-tool {
+  color: @dead-color;
+  font-size: 12px;
+}
+
 
 

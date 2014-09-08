@@ -13,18 +13,15 @@
         .panel.panel-default.rc-card
           .panel-heading
             = raw card.question
+            .clearfix.rc-card-tool
+              %span.rc-card-createtime= "#{distance_of_time_in_words(Time.now, card.created_at)} ago"
+              - if user_signed_in? && card.user == current_user
+                .pull-right
+                  = link_to card_path(card), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'rc-card-delete' do
+                    = t('.destroy', :default => t("helpers.links.destroy"))
+                  = link_to edit_card_path(card), :class => 'rc-card-edit' do
+                    = t('.edit', :default => t("helpers.links.edit"))
+
           .panel-body
             :markdown
               #{card.answer}
-          - if user_signed_in? && card.user == current_user
-            .panel-footer
-              .clearfix
-                .pull-right
-                  = link_to t('.edit', :default => t("helpers.links.edit")),
-                    edit_card_path(card), :class => 'rc-card-action'
-                  = link_to t('.destroy', :default => t("helpers.links.destroy")),
-                    card_path(card), :method => :delete,
-                    :data => { :confirm => t('.confirm',
-                    :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                    :class => 'rc-card-action'
-

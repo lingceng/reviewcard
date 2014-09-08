@@ -19,3 +19,7 @@ User markdown in Haml
 
     :markdown
        the markdown text
+
+### Use Font Awesome
+Gem 'twitter-bootstrap-rails' has default use Font Awesome.
+
