@@ -37,6 +37,17 @@
 @time-active-color: #0084b4;
 
 // mixin
+.link-color(@link-color) {
+  color: @link-color;
+  &:hover {
+    color: @link-color;
+    text-decoration: underline;
+  }
+  &:visited {
+    color: @active-color;
+  }
+}
+
 .rc-card-action() {
   color: @quiet-color;
   &:hover {
@@ -62,11 +73,11 @@
       }
 
       .rc-edit {
-        color: @active-color;
+        .link-color(@active-color);
       }
 
       .rc-delete {
-        color: @active-color;
+        .link-color(@active-color);
       }
     }
   }
