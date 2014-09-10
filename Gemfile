@@ -42,7 +42,10 @@ gem 'therubyracer',  platforms: :ruby
 # Less support
 gem "less-rails"
 # Bootstrap css and js
-gem "twitter-bootstrap-rails"
+# use build version to avoid glyphicons problem
+gem "twitter-bootstrap-rails", :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+
+
 
 # HTML template language
 gem 'haml', '~> 4.0.5'

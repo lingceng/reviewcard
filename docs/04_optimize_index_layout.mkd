@@ -20,6 +20,30 @@ User markdown in Haml
     :markdown
        the markdown text
 
-### Use Font Awesome
+### Use Font Awesome (not used for loading time)
 Gem 'twitter-bootstrap-rails' has default use Font Awesome.
+
+    @font-face {
+        font-family: "Glyphicons Halflings";
+        src: url("twitter/fonts/glyphicons-halflings-regular.eot?#iefix")
+          format("embedded-opentype"),
+          url("twitter/fonts/glyphicons-halflings-regular.woff") format("woff"),
+          url("twitter/fonts/glyphicons-halflings-regular.ttf") format("truetype"),
+          url("twitter/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular")
+          format("svg");
+    }
+
+Just take care not to rewrite the font setting in `bootstrap.css.less`
+So load css files by @import in `bootstrap_and_overrides.css.less`
+
+### Make edit button bigger
++ Add `btn btn-xs` classes
++ Use `margin-bottom: -8px`
+
+### Use a better font for content
+[use webfonts](http://www.fontspring.com/support/installing_webfonts/how-do-i-use-the-webfonts)
+
+### Test the loading time on heroku
++ Without VPN 1 second
++ With VPN half 1 second
 

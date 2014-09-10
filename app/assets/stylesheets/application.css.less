@@ -10,46 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+ *= require bootstrap_and_overrides
  */
-
-@import "twitter/bootstrap/bootstrap";
-
-@dead-color: lightgrey;
-
-.rc-card {
-}
-
-.rc-card-question {
-  .resizable(vertical);
-}
-
-.rc-card-answer {
-  .resizable(vertical);
-}
-
-
-.rc-card-action() {
-  color: @dead-color;
-  &:visited {
-    color: @dead-color;
-  }
-}
-
-.rc-card-edit {
-  .rc-card-action();
-}
-
-.rc-card-delete {
-  .rc-card-action();
-  margin-right: 10px;
-}
-
-.rc-card-tool {
-  color: @dead-color;
-  font-size: 12px;
-}
-
-
 

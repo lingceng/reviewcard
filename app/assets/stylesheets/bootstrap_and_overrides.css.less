@@ -1,8 +1,12 @@
 @import "twitter/bootstrap/bootstrap";
 
 // Set the correct sprite paths
-@iconSpritePath: image-url("twitter/bootstrap/glyphicons-halflings.png");
-@iconWhiteSpritePath: image-url("twitter/bootstrap/glyphicons-halflings-white.png");
+@glyphiconsEotPath: font-url("glyphicons-halflings-regular.eot");
+@glyphiconsEotPath_iefix: font-url("glyphicons-halflings-regular.eot?#iefix");
+@glyphiconsWoffPath: font-url("glyphicons-halflings-regular.woff");
+@glyphiconsTtfPath: font-url("glyphicons-halflings-regular.ttf");
+@glyphiconsSvgPath: font-url("glyphicons-halflings-regular.svg#glyphicons_halflingsregular");
+
 
 // Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
 @fontAwesomeEotPath: font-url("fontawesome-webfont.eot");
@@ -12,10 +16,10 @@
 @fontAwesomeSvgPath: font-url("fontawesome-webfont.svg#fontawesomeregular");
 
 // Font Awesome
-@import "fontawesome/font-awesome";
+//@import "fontawesome/font-awesome";
 
 // Glyphicons
-//@import "twitter/bootstrap/glyphicons.less";
+@import "twitter/bootstrap/glyphicons.less";
 
 // Your custom LESS stylesheets goes here
 //
@@ -25,5 +29,82 @@
 // If you'd like to override bootstrap's own variables, you can do so here as well
 // See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
 //
-// Example:
-// @link-color: #ff0000;
+
+// variable
+@quiet-color: #e1e8ed;
+@active-color: #8899ab;
+@time-quiet-color: #8899ab;
+@time-active-color: #0084b4;
+
+// mixin
+.rc-card-action() {
+  color: @quiet-color;
+  &:hover {
+    color: @active-color;
+    text-decoration: underline;
+  }
+  &:visited {
+    color: @quiet-color;
+  }
+}
+
+
+
+// Card Index
+.rc-card {
+
+  &:hover {
+    background-color: #f5f8fa;
+
+    .rc-toolbar {
+      .rc-createtime {
+        color: @time-active-color;
+      }
+
+      .rc-edit {
+        color: @active-color;
+      }
+
+      .rc-delete {
+        color: @active-color;
+      }
+    }
+  }
+
+  .panel-body {
+    padding-bottom: 5px;
+  }
+
+
+  .rc-toolbar {
+    font-size: 12px;
+    margin-bottom: -8px;
+
+
+    .rc-createtime {
+      color: @time-quiet-color;
+    }
+
+    .rc-edit {
+      .rc-card-action();
+    }
+
+    .rc-delete {
+      .rc-card-action();
+    }
+  }
+
+}
+
+// Card Form
+.rc-card-question {
+  .resizable(vertical);
+}
+
+.rc-card-answer {
+  .resizable(vertical);
+}
+
+
+
+
