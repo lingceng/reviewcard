@@ -1,13 +1,12 @@
 = form_for @card, html: { class: "form card" } do |f|
   .form-group
     = f.label :question, class: 'control-label'
-    .controls
-      = f.text_area :question, class: 'form-control rc-card-question', required: true, rows: '2'
-    = error_span(@card[:question])
+    = f.text_area :question, class: 'form-control rc-card-question', required: true, rows: '2'
+    = f.error_span(:question)
   .form-group
     = f.label :answer, class: 'control-label'
-    .controls
-      = f.text_area :answer, class: 'form-control rc-card-answer', required: true, rows: '5'
-    = error_span(@card[:answer])
+    = f.text_area :answer, class: 'form-control rc-card-answer', required: true, rows: '5'
+    = f.error_span(:answer)
+    %span.help-block Answer support Markdown
   = f.submit nil,class: 'btn btn-primary'
   = link_to t('.cancel', :default => t("helpers.links.cancel")), cards_path, :class => 'btn btn-default'

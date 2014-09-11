@@ -23,6 +23,11 @@ module Reviewcard
       g.template_engine :haml
     end
 
+    # custome for bootstrap form
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance|
+       "<div class=\"has-error\">#{html_tag}</div>".html_safe
+    }
+
 
   end
 end

@@ -1,3 +1,4 @@
 - model_class = Card
-%h4=@page_title
+%h4=t '.title', :default => [:'helpers.titles.new', 'New %{model}'],
+      :model => model_class .model_name.human.titleize
 = render :partial => "form"
