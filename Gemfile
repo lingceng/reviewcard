@@ -62,6 +62,13 @@ gem 'devise'
 # render markdown
 gem 'redcarpet'
 
+# nprogress
+# pajax or turbolinks load progress
+gem 'nprogress-rails'
+
+# jQuery plugin for drop-in fix binded events problem caused by Turbolinks
+gem 'jquery-turbolinks'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -11,7 +11,16 @@
 // about supported directives.
 //
 //= require jquery
+//
+// jQuery plugin for drop-in fix binded events problem caused by Turbolinks
+//= require jquery.turbolinks
+
 //= require jquery_ujs
 //= require twitter/bootstrap
+//
+// keep at bottom
 //= require turbolinks
-//= require_tree .
+//= require nprogress
+//= require nprogress-turbolinks
+//
+//= require bootstrap
