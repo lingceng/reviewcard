@@ -16,8 +16,9 @@
             = raw card.question
 
           .panel-body
-            :markdown
-              #{card.answer}
+            %div
+              :markdown
+                #{card.answer}
             .rc-toolbar
               %span.rc-createtime= "#{distance_of_time_in_words(Time.now, card.created_at)} ago"
               - if user_signed_in? && card.user == current_user

@@ -31,77 +31,88 @@
 //
 
 // variable
-@quiet-color: #e1e8ed;
-@active-color: #8899ab;
-@time-quiet-color: #8899ab;
-@time-active-color: #0084b4;
+@rc-background-color: #6d7680;
+
+@rc-quiet-color: #e1e8ed;
+@rc-normal-color: #8899ab;
+@rc-active-color: #0084b4;
+
+@rc-head-hover-color: #2c4d6f;
+@rc-panel-hover-color: #f5f8fa;
 
 // mixin
-.link-color(@link-color) {
+.link-color(@link-color, @hover-color) {
   color: @link-color;
   &:hover {
+    color: @hover-color;
+    text-decoration: underline;
+  }
+  &:visited {
     color: @link-color;
-    text-decoration: underline;
-  }
-  &:visited {
-    color: @active-color;
   }
 }
 
-.rc-card-action() {
-  color: @quiet-color;
-  &:hover {
-    color: @active-color;
-    text-decoration: underline;
-  }
-  &:visited {
-    color: @quiet-color;
-  }
+
+// Body
+body {
+  background-color: @rc-background-color;
 }
 
+// Navbar
+.rc-navbar {
+}
 
 
 // Card Index
 .rc-card {
+  border: none;
 
   &:hover {
-    background-color: #f5f8fa;
+    background-color: @rc-panel-hover-color;
+
+    .panel-heading {
+      background-color: @rc-head-hover-color;
+      color: white;
+    }
 
     .rc-toolbar {
       .rc-createtime {
-        color: @time-active-color;
+        color: @rc-normal-color;
       }
 
       .rc-edit {
-        .link-color(@active-color);
+        .link-color(@rc-normal-color, @rc-normal-color);
       }
 
       .rc-delete {
-        .link-color(@active-color);
+        .link-color(@rc-normal-color, @rc-normal-color);
       }
     }
   }
 
+  .panel-heading {
+    padding: 10px 10px 5px 10px;
+  }
+
+
   .panel-body {
-    padding-bottom: 5px;
+    padding: 5px 10px 5px 10px;
   }
 
 
   .rc-toolbar {
     font-size: 12px;
-    margin-bottom: -8px;
-
 
     .rc-createtime {
-      color: @time-quiet-color;
+      color: @rc-quiet-color;
     }
 
     .rc-edit {
-      .rc-card-action();
+      .link-color(@rc-quiet-color, @rc-normal-color);
     }
 
     .rc-delete {
-      .rc-card-action();
+      .link-color(@rc-quiet-color, @rc-normal-color);
     }
   }
 

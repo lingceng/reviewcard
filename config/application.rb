@@ -27,4 +27,4 @@ module Reviewcard
   end
 end
 
-SITE_NAME = "ReviewCard"
+SITE_NAME = "Review Card"
