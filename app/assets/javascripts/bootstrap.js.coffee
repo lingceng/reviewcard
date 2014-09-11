@@ -31,6 +31,15 @@ jQuery( ->
   $("a[rel~=tooltip], .has-tooltip").tooltip()
 
   $("[data-from]").click(preview)
+
+  $(".rc-card").click( ->
+    el = $(this)
+    el.removeClass('floating')
+
+    # http://css-tricks.com/restart-css-animation/
+    setTimeout( (->
+      el.addClass('floating')), 1)
+  )
 )
 
 
