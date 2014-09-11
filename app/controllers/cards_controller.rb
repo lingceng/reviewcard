@@ -1,6 +1,7 @@
 class CardsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_card, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_card_owner, only: [:show, :edit, :update, :destroy]
 
   # GET /cards
   # GET /cards.json
@@ -85,6 +86,11 @@ class CardsController < ApplicationController
     def set_card
       @card = Card.find(params[:id])
     end
+
+    def authenticate_card_owner
+      redirect_to root_url unless @card.user == current_user
+    end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def card_params
