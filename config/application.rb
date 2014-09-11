@@ -32,4 +32,10 @@ module Reviewcard
   end
 end
 
+# For page title
 SITE_NAME = "Review Card"
+
+# require lib/markdown_convertor.rb
+require "markdown_convertor"
+
+

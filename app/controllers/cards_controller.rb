@@ -10,6 +10,13 @@ class CardsController < ApplicationController
     render 'index'
   end
 
+  def preview
+    @body = params[:body]
+
+    respond_to do |format|
+      format.json
+    end
+  end
 
   # GET /cards
   # GET /cards.json

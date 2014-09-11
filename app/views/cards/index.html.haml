@@ -12,12 +12,11 @@
     .col-md-6.col-sm-6.col-xs-12
       .panel.panel-default.rc-card
         .panel-heading
-          = raw card.question
+          = sanitize card.question
 
         .panel-body
           %div
-            :markdown
-              #{card.answer}
+            =markdown card.answer
           .rc-toolbar
             %span.rc-createtime= "#{distance_of_time_in_words(Time.now, card.created_at)} ago"
             - if user_signed_in? && card.user == current_user

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :cards do
     get 'public', on: :collection
+    post 'preview', on: :collection
   end
   root 'cards#public'
 
