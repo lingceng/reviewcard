@@ -19,7 +19,7 @@
 
 
   %body
-    .navbar.navbar-default.navbar-inverse.navbar-static-top.rc-navbar
+    .navbar.navbar-default.navbar-inverse.navbar-fixed-top.rc-navbar
       .container-fluid
         .navbar-header
           %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
@@ -30,7 +30,7 @@
             %span.glyphicon.glyphicon-send
             Review Card
         .navbar-collapse.collapse.navbar-responsive-collapse
-          %ul.nav.navbar-nav.pull-right
+          %ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
               %li
                 = link_to cards_path do
@@ -51,7 +51,7 @@
                   Login
 
 
-    .container-fluid
+    .container-fluid.rc-content
       .row
         .col-md-10.col-md-offset-1
           = bootstrap_flash
