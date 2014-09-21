@@ -1,0 +1,19 @@
+.panel.panel-default.rc-card
+  .panel-heading
+    = sanitize card.question
+
+  .panel-body
+    %div
+      =markdown card.answer
+    .rc-toolbar
+      %span.rc-createtime= "#{ truncate( card.user.email ) }"
+      %span.rc-createtime= " / #{distance_of_time_in_words(Time.now, card.created_at)} ago"
+      - if user_signed_in? && card.user == current_user
+        .pull-right
+          = link_to card_path(card), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+            :class => 'rc-delete btn btn-xs' do
+            %span.glyphicon.glyphicon-trash
+            = t('.destroy', :default => t("helpers.links.destroy"))
+          = link_to edit_card_path(card), :class => 'rc-edit btn btn-xs' do
+            %span.glyphicon.glyphicon-edit
+            = t('.edit', :default => t("helpers.links.edit"))
