@@ -51,6 +51,9 @@ group :development, :test do
   # Can also retrieve bindings even further up the stack.
   # better_errors use this to display local variables on error pages
   gem "binding_of_caller"
+
+  # generate test factories
+  gem 'factory_girl_rails'
 end
 
 

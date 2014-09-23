@@ -2,7 +2,12 @@ require 'test_helper'
 
 class CardsControllerTest < ActionController::TestCase
   setup do
-    @card = cards(:one)
+    @user = FactoryGirl.create(:user)
+    sign_in(@user)
+
+    @card = FactoryGirl.build(:card)
+    @card.user = @user
+    @card.save
   end
 
   test "should get index" do

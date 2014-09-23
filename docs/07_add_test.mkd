@@ -1,0 +1,20 @@
+Add Test
+===
+
+### Add The Factory Girl
+[GETTING\_STARTED.md](http://rubydoc.info/gems/factory_girl/file/GETTING_STARTED.md)
+
+    gem 'factory_girl_rails'
+
+put factories in `test/factories.rb`
+
+
+### User The Devise Helper
+
+    class ActiveSupport::TestCase
+      include Devise::TestHelpers
+    end
+
+    @user = FactoryGirl.create(:user)
+    sign_in @user
+
