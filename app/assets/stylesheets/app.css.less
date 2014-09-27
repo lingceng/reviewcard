@@ -39,6 +39,8 @@
 
 @rc-head-hover-color: #2c4d6f;
 @rc-panel-hover-color: #f5f8fa;
+@rc-dark-color: #333;
+@rc-hide-color: #777;
 
 // mixin
 .link-color(@link-color, @hover-color) {
@@ -60,14 +62,9 @@
 }
 
 .navbar .navbar-brand {
-  color: #333333;
+  color: @rc-dark-color;
   line-height: 50px;
   padding: 0 15px;
-}
-
-// Body
-body {
-  background-color: @rc-background-color;
 }
 
 // Navbar
@@ -76,7 +73,6 @@ body {
 
 // Content
 .rc-content {
-  margin-top: 70px;
 }
 
 // Card Index
@@ -182,3 +178,46 @@ body {
   color:#fff;
   background:#74bdb2
 }
+
+.center-content {
+  .make-md-column-offset(3);
+  .make-md-column(6);
+}
+
+// Body
+body {
+  background-color: @rc-background-color;
+}
+
+#main-content {
+  min-height: 600px;
+}
+
+// footer
+.footer {
+  background: @rc-dark-color;
+  padding: 20px 0 10px;
+  height: 60px;
+  color: @rc-background-color;
+
+  .footer-copyright {
+    float: left;
+    margin-bottom: 10px;
+  }
+
+  .footer-nav {
+    padding: 0;
+    list-style: none;
+    float: right;
+    li {
+      display: inline;
+      padding-left: 15px;
+      a {
+        color: @rc-hide-color;
+      }
+    }
+  }
+}
+
+
+

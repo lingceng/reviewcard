@@ -23,4 +23,4 @@
 //= require nprogress
 //= require nprogress-turbolinks
 //
-//= require bootstrap
+//= require app

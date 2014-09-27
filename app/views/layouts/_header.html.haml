@@ -1,0 +1,33 @@
+/ navbar
+.navbar.navbar-default.rc-navbar
+  .container
+    .navbar-header
+      %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to root_path,  class: 'navbar-brand' do
+        = image_tag 'favicon.png'
+        = SITE_NAME
+    .navbar-collapse.collapse.navbar-responsive-collapse
+      %ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
+          %li
+            = link_to cards_path do
+              %span.glyphicon.glyphicon-th-large
+              My Cards
+          %li
+            = link_to  edit_user_registration_path do
+              %span.glyphicon.glyphicon-user
+              = current_user.email
+          %li
+            = link_to destroy_user_session_path, method: :delete do
+              %span.glyphicon.glyphicon-log-out
+              Logout
+        - else
+          %li
+            = link_to new_user_session_path do
+              %span.glyphicon.glyphicon-log-in
+              Login
+
+

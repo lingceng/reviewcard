@@ -33,7 +33,7 @@ module Reviewcard
 end
 
 # For page title
-SITE_NAME = "Review Card"
+SITE_NAME = "ReviewCard"
 
 # require lib/markdown_convertor.rb
 require "markdown_convertor"

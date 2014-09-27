@@ -5,11 +5,13 @@
     = f.error_span(:question)
   .form-group
     = f.label :answer, class: 'control-label'
-    %button.btn.btn-xs{:type => 'button', 'data-from' => '#card_answer',
+    %button.btn.btn-xs.pull-right.btn-success{:type => 'button', 'data-from' => '#card_answer',
       'data-to' => '#card_answer_preview'} preview
     #card_answer_preview.hidden preview content...
     = f.text_area :answer, class: 'form-control rc-card-answer', required: true, rows: '5'
     = f.error_span(:answer)
     %span.help-block Answer support Markdown
-  = f.submit nil,class: 'btn btn-primary'
-  = link_to t('.cancel', :default => t("helpers.links.cancel")), cards_path, :class => 'btn btn-default'
+  .pull-right
+    = link_to t('.cancel', :default => t("helpers.links.cancel")),
+      cards_path, :class => 'btn btn-default'
+    = f.submit nil,class: 'btn btn-primary'
