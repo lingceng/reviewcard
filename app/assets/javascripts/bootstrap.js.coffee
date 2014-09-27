@@ -1,5 +1,12 @@
+NProgress.configure({
+  showSpinner: false
+  ease: 'ease'
+  speed: 500
+})
+
 $(document).on 'page:fetch', ->
   NProgress.start()
+  NProgress.set(0.4)
 
 $(document).on 'page:change', ->
   NProgress.done()
