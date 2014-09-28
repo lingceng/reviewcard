@@ -1,0 +1,13 @@
+!!! 5
+%html
+  = render 'layouts/head'
+
+  %body
+    = render partial: 'layouts/header'
+
+    .main-container.mt-20
+      .container
+        = bootstrap_flash class: 'mt20'
+      = yield
+
+    = render 'layouts/footer'

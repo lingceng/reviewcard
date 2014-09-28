@@ -1,0 +1,19 @@
+.home-section.home-section-primary.text-center
+  .container
+    %h1= [SITE_NAME, SITE_DESCRIPTION].join(',')
+    %h3 Keep your notes, help review and share, in an elegant way
+
+.home-section.home-section-lighter.text-center
+  .container
+    %h3 Write down your card now.
+    <a href="/users/sign_up" class="btn btn-success">Sign Up</a>
+
+
+.home-section.text-center
+  .container
+    %h3 Public Cards
+    .row.text-left
+      - @cards.each do |card|
+        .col-md-6.col-sm-6.col-xs-12
+          = render :partial => "cards/card", :locals => { card: card }
+

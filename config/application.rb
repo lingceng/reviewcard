@@ -34,6 +34,7 @@ end
 
 # For page title
 SITE_NAME = "ReviewCard"
+SITE_DESCRIPTION = "Collect Your Mind"
 
 # require lib/markdown_convertor.rb
 require "markdown_convertor"

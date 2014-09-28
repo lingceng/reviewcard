@@ -3,13 +3,6 @@ class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_card_owner, only: [:edit, :update, :destroy]
 
-  # GET /cards
-  # GET /cards.json
-  def public
-    @cards = Card.all
-    render 'index'
-  end
-
   def preview
     @body = params[:body]
 

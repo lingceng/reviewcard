@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :cards do
-    get 'public', on: :collection
     post 'preview', on: :collection
   end
 
-  root 'cards#public'
+  root 'home#index'
 
   get '/about' => 'home#about'
+  get '/index' => 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

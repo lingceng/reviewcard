@@ -1,28 +1,27 @@
-.row
-  .center-content
-    .panel.panel-default
-      .panel-body.text-center
-        = image_tag 'favicon.png', height: '160', width: '160'
-        %h1 ReviewCard
-        %h3 Collect Your Tip
+.home-section.home-section-lighter.text-center
+  .container
+    = image_tag 'favicon.png', height: '160', width: '160'
+    %h1= SITE_NAME
+    %h3= SITE_DESCRIPTION
 
-        %hr/
 
-        = image_tag 'http://www.gravatar.com/avatar/7e3dd9bd074c93de9f94e31e781fb73a.png?s=160',
-          class: 'img-circle'
-        %h3 钟科显
-        %p.text-primary Creator
-        %p Web Developer
-        %p.no-decoration
-          = link_to 'https://lingceng.github.io', class: 'text-muted' do
-            %span.fa-stack.fa-lg
-              %i.fa.fa-circle.fa-stack-2x
-              %i.fa.fa-home.fa-stack-1x.fa-inverse
-          = link_to 'https://github.com/lingceng', class: 'text-muted' do
-            %span.fa-stack.fa-lg
-              %i.fa.fa-circle.fa-stack-2x
-              %i.fa.fa-github.fa-stack-1x.fa-inverse
-          = link_to 'https://twitter.com/lingceng', class: 'text-muted' do
-            %span.fa-stack.fa-lg
-              %i.fa.fa-circle.fa-stack-2x
-              %i.fa.fa-twitter.fa-stack-1x.fa-inverse
+.home-section.text-center
+  .container
+    = image_tag 'http://www.gravatar.com/avatar/7e3dd9bd074c93de9f94e31e781fb73a.png?s=160',
+      class: 'img-circle'
+    %h3 钟科显
+    %p.text-primary Creator
+    %p Web Developer
+    %p.no-decoration
+      = link_to 'https://lingceng.github.io', class: 'text-muted' do
+        %span.fa-stack.fa-lg
+          %i.fa.fa-circle.fa-stack-2x
+          %i.fa.fa-home.fa-stack-1x.fa-inverse
+      = link_to 'https://github.com/lingceng', class: 'text-muted' do
+        %span.fa-stack.fa-lg
+          %i.fa.fa-circle.fa-stack-2x
+          %i.fa.fa-github.fa-stack-1x.fa-inverse
+      = link_to 'https://twitter.com/lingceng', class: 'text-muted' do
+        %span.fa-stack.fa-lg
+          %i.fa.fa-circle.fa-stack-2x
+          %i.fa.fa-twitter.fa-stack-1x.fa-inverse
