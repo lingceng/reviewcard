@@ -64,10 +64,10 @@ gem "less-rails"
 
 # Bootstrap css and js
 # use build version to avoid glyphicons problem
-# gem "twitter-bootstrap-rails", :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+#gem "twitter-bootstrap-rails", :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 #
 # local dev
-# gem "twitter-bootstrap-rails", :path => '../twitter-bootstrap-rails'
+#gem "twitter-bootstrap-rails", :path => '../twitter-bootstrap-rails'
 #
 # use lingceng version to fix span_error
 gem "twitter-bootstrap-rails", :git => 'git://github.com/lingceng/twitter-bootstrap-rails.git'

@@ -13,7 +13,16 @@
         %h3 钟科显
         %p.text-primary Creator
         %p Web Developer
-        %p
-          = link_to 'Blog', 'https://lingceng.github.io'
-          = link_to 'Github', 'https://github.com/lingceng'
-          = link_to 'Twitter', 'https://twitter.com/lingceng'
+        %p.no-decoration
+          = link_to 'https://lingceng.github.io', class: 'text-muted' do
+            %span.fa-stack.fa-lg
+              %i.fa.fa-circle.fa-stack-2x
+              %i.fa.fa-home.fa-stack-1x.fa-inverse
+          = link_to 'https://github.com/lingceng', class: 'text-muted' do
+            %span.fa-stack.fa-lg
+              %i.fa.fa-circle.fa-stack-2x
+              %i.fa.fa-github.fa-stack-1x.fa-inverse
+          = link_to 'https://twitter.com/lingceng', class: 'text-muted' do
+            %span.fa-stack.fa-lg
+              %i.fa.fa-circle.fa-stack-2x
+              %i.fa.fa-twitter.fa-stack-1x.fa-inverse

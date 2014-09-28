@@ -17,24 +17,24 @@
           %li
             = link_to cards_path, data: { toggle: "tooltip",  placement: 'bottom' },
               "title" => "Show your own cards" do
-              %span.glyphicon.glyphicon-th-large
+              %i.fa.fa-th-large
               My Cards
           %li
             = link_to  edit_user_registration_path, data: { toggle: "tooltip",  placement: 'bottom' },
               "title" => "Edit your info" do
-              %span.glyphicon.glyphicon-user
+              %span.fa.fa-user
               = current_user.email
           %li
             = link_to destroy_user_session_path, method: :delete,
               data: { toggle: "tooltip",  placement: 'bottom', confirm: 'Are you sure?' },
               "title" => "Logout your account" do
-              %span.glyphicon.glyphicon-log-out
+              %span.fa.fa-sign-out
               Logout
         - else
           %li
             = link_to new_user_session_path, data: { toggle: "tooltip",  placement: 'bottom' },
               title: "Login with your account" do
-              %span.glyphicon.glyphicon-log-in
+              %span.fa.fa-sign-in
               Login
 
 

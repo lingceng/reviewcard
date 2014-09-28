@@ -12,8 +12,8 @@
         .pull-right
           = link_to card_path(card), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
             :class => 'rc-delete btn btn-xs btn-link' do
-            %span.glyphicon.glyphicon-trash
+            %span.fa.fa-trash
             = t('.destroy', :default => t("helpers.links.destroy"))
           = link_to edit_card_path(card), :class => 'rc-edit btn btn-xs btn-link' do
-            %span.glyphicon.glyphicon-edit
+            %span.fa.fa-edit
             = t('.edit', :default => t("helpers.links.edit"))
