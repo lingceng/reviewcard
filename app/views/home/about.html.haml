@@ -1,6 +1,19 @@
 .row
   .center-content
     .panel.panel-default
-      .panel-body
-        I'm lingceng
+      .panel-body.text-center
+        = image_tag 'favicon.png', height: '160', width: '160'
+        %h1 ReviewCard
+        %h3 Collect Your Tip
 
+        %hr/
+
+        = image_tag 'http://www.gravatar.com/avatar/7e3dd9bd074c93de9f94e31e781fb73a.png?s=160',
+          class: 'img-circle'
+        %h3 钟科显
+        %p.text-primary Creator
+        %p Web Developer
+        %p
+          = link_to 'Blog', 'https://lingceng.github.io'
+          = link_to 'Github', 'https://github.com/lingceng'
+          = link_to 'Twitter', 'https://twitter.com/lingceng'

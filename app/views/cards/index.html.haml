@@ -2,7 +2,9 @@
 
 - if user_signed_in?
   .clearfix
-    = link_to new_card_path, :class => 'btn btn-primary pull-right' do
+    = link_to new_card_path, :class => 'btn btn-primary pull-right',
+      data: { toggle: "tooltip",  placement: 'bottom' },
+      "title" => "Add a new card" do
       %span.glyphicon.glyphicon-plus
       = t('.new', :default => t("helpers.links.new"))
   %br/
